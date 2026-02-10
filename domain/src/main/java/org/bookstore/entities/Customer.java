@@ -18,7 +18,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(nullable = false)
     private String firstName;
@@ -38,6 +38,6 @@ public class Customer {
     @Column
     private String address;
 
-    @OneToMany(mappedBy = "orders")
+    @OneToMany(mappedBy = "customer")
     private List<Order> orders = new ArrayList<>();
 }

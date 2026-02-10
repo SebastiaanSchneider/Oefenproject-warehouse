@@ -12,9 +12,6 @@ import org.bookstore.enums.Genre;
 import java.time.LocalDate;
 import java.util.UUID;
 
-/**
- * DTO for handling Book objects
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

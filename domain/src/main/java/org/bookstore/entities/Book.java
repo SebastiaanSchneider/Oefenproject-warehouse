@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.bookstore.enums.BookFormat;
 import org.bookstore.enums.Genre;
 
@@ -13,16 +14,15 @@ import java.util.UUID;
 /**
  * Entity representing a book
  */
-@Data
 @Entity
 @Getter
+@Setter
 @RequiredArgsConstructor
-@Table(name = "catalogue")
+@Table(name = "books")
 public class Book {
 
     @Id
     @GeneratedValue
-    @Column(updatable = false, nullable = false)
     private UUID id;
 
     @Column(nullable = false, length = 17)
@@ -32,7 +32,7 @@ public class Book {
     private String title;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "authorId", nullable = false)
+    @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
     @Column(nullable = false)

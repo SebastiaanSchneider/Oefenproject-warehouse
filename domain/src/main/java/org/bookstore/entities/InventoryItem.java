@@ -3,6 +3,7 @@ package org.bookstore.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
@@ -11,6 +12,7 @@ import java.util.UUID;
  */
 @Entity
 @Getter
+@Setter
 @RequiredArgsConstructor
 @Table(name = "inventory")
 public class InventoryItem {
@@ -20,7 +22,7 @@ public class InventoryItem {
     private UUID id;
 
     @OneToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "bookId", nullable = false)
+    @JoinColumn(name = "book_id", nullable = false)
     private Book book;
 
     @Column(nullable = false)

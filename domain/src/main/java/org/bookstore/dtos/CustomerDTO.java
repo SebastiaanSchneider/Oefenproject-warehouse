@@ -12,9 +12,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthorDTO {
+public class CustomerDTO {
     @NotNull
-    private Long id;
+    private long id;
 
     @NotNull
     private String firstName;
@@ -26,5 +26,9 @@ public class AuthorDTO {
 
     private LocalDate birthDate;
 
-    private List<BookDTO> books = new ArrayList<>();
+    private String email;
+
+    private String address;
+
+    private List<OrderDTO> orders = new ArrayList<>();
 }
